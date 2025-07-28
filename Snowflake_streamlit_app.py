@@ -46,7 +46,7 @@ if Ingredient_list: # if it IS NOT NULL to remove [] when select nothing
         url = f"https://api.nal.usda.gov/fdc/v1/foods/search?query={fruit_chosen}&api_key={api_key}"
         response = requests.get(url)
         if response.status_code == 200:
-        data = response.json()
+            data = response.json()
         # Extract basic info from the first food item
         if "foods" in data and len(data["foods"]) > 0:
             food_item = data["foods"][0]
